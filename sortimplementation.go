@@ -1,4 +1,4 @@
-package slice
+package collection
 
 import "github.com/clipperhouse/typewriter"
 
@@ -104,7 +104,7 @@ func doPivot{{.SliceName}}(rcv {{.SliceName}}, less func({{.Type}}, {{.Type}}) b
 	//	rcv[d <= i < hi] = pivot
 	//
 	// Once b meets c, can swap the "= pivot" sections
-	// into the middle of the slice.
+	// into the middle of the collection.
 	pivot := lo
 	a, b, c, d := lo+1, lo+1, hi, hi
 	for {

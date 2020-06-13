@@ -1,4 +1,4 @@
-package slice
+package collection
 
 import "github.com/clipperhouse/typewriter"
 
@@ -9,7 +9,7 @@ var maxBy = &typewriter.Template{
 func (rcv {{.SliceName}}) MaxBy(less func({{.Type}}, {{.Type}}) bool) (result {{.Type}}, err error) {
 	l := len(rcv)
 	if l == 0 {
-		err = errors.New("cannot determine the MaxBy of an empty slice")
+		err = errors.New("cannot determine the MaxBy of an empty collection")
 		return
 	}
 	m := 0

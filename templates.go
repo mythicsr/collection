@@ -1,4 +1,4 @@
-package slice
+package collection
 
 import (
 	"github.com/clipperhouse/typewriter"
@@ -14,11 +14,11 @@ type model struct {
 }
 
 var templates = typewriter.TemplateSlice{
-	slice,
+	collection,
 
-	aggregateT,
-	all,
-	any,
+	aggregateT, //
+	all,        //
+	any,        //
 	average,
 	averageT,
 	count,
@@ -27,6 +27,7 @@ var templates = typewriter.TemplateSlice{
 	each,
 	first,
 	groupByT,
+	keyByT,
 	max,
 	maxT,
 	maxBy,
@@ -53,4 +54,10 @@ var templates = typewriter.TemplateSlice{
 	sortInterface,
 
 	shuffle,
+
+	//paginate 分页用
+	//chunk
+	//append
+	//findOne //O(1) map
+	//New  //顺便初始化map
 }

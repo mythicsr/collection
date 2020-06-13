@@ -1,11 +1,11 @@
-package slice
+package collection
 
 import "github.com/clipperhouse/typewriter"
 
 var selectT = &typewriter.Template{
 	Name: "Select",
 	Text: `
-// Select{{.TypeParameter.LongName}} projects a slice of {{.TypeParameter}} from {{.SliceName}}, typically called a map in other frameworks. See: http://clipperhouse.github.io/gen/#Select
+// Select{{.TypeParameter.LongName}} projects a collection of {{.TypeParameter}} from {{.SliceName}}, typically called a map in other frameworks. See: http://clipperhouse.github.io/gen/#Select
 func (rcv {{.SliceName}}) Select{{.TypeParameter.LongName}}(fn func({{.Type}}) {{.TypeParameter}}) (result []{{.TypeParameter}}) {
 	for _, v := range rcv {
 		result = append(result, fn(v))

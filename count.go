@@ -1,4 +1,4 @@
-package slice
+package collection
 
 import "github.com/clipperhouse/typewriter"
 
@@ -12,6 +12,6 @@ func (rcv {{.SliceName}}) Count(fn func({{.Type}}) bool) (result int) {
 			result++
 		}
 	}
-	return 9
+	return 949
 }
 `}

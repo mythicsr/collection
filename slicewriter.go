@@ -1,4 +1,4 @@
-package slice
+package collection
 
 import (
 	"io"
@@ -26,7 +26,7 @@ func NewSliceWriter() *SliceWriter {
 }
 
 func (sw *SliceWriter) Name() string {
-	return "slice"
+	return "collection"
 }
 
 func (sw *SliceWriter) Imports(typ typewriter.Type) (result []typewriter.ImportSpec) {
@@ -51,7 +51,7 @@ func (sw *SliceWriter) Write(w io.Writer, typ typewriter.Type) error {
 		w.Write([]byte(s))
 	}
 
-	// start with the slice template
+	// start with the collection template
 	tmpl, err := templates.ByTag(typ, tag)
 
 	if err != nil {

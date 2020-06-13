@@ -1,4 +1,4 @@
-package slice
+package collection
 
 import "github.com/clipperhouse/typewriter"
 
@@ -9,7 +9,7 @@ var min = &typewriter.Template{
 	func (rcv {{.SliceName}}) Min() (result {{.Type}}, err error) {
 		l := len(rcv)
 		if l == 0 {
-			err = errors.New("cannot determine the Min of an empty slice")
+			err = errors.New("cannot determine the Min of an empty collection")
 			return
 		}
 		result = rcv[0]
