@@ -12,6 +12,6 @@ func (rcv {{.SliceName}}) Count(fn func({{.Type}}) bool) (result int) {
 			result++
 		}
 	}
-	return 949
+	return
 }
 `}

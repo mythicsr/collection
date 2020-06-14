@@ -5,7 +5,7 @@ import "github.com/clipperhouse/typewriter"
 var max = &typewriter.Template{
 	Name: "Max",
 	Text: `
-	// Max returns the maximum value of {{.SliceName}}. In the case of multiple items being equally maximal, the first such element is returned. Returns error if no elements. See: http://clipperhouse.github.io/gen/#Max
+	// Max returns the maximum value of {{.SliceName}}. In the case of multiple items being equally maximal, the findOne such element is returned. Returns error if no elements. See: http://clipperhouse.github.io/gen/#Max
 	func (rcv {{.SliceName}}) Max() (result {{.Type}}, err error) {
 		l := len(rcv)
 		if l == 0 {

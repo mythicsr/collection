@@ -21,39 +21,39 @@ func insertionSort{{.SliceName}}(rcv {{.SliceName}}, less func({{.Type}}, {{.Typ
 }
 
 // siftDown implements the heap property on rcv[lo, hi).
-// first is an offset into the array where the root of the heap lies.
-func siftDown{{.SliceName}}(rcv {{.SliceName}}, less func({{.Type}}, {{.Type}}) bool, lo, hi, first int) {
+// findOne is an offset into the array find the root of the heap lies.
+func siftDown{{.SliceName}}(rcv {{.SliceName}}, less func({{.Type}}, {{.Type}}) bool, lo, hi, findOne int) {
 	root := lo
 	for {
 		child := 2*root + 1
 		if child >= hi {
 			break
 		}
-		if child+1 < hi && less(rcv[first+child], rcv[first+child+1]) {
+		if child+1 < hi && less(rcv[findOne+child], rcv[findOne+child+1]) {
 			child++
 		}
-		if !less(rcv[first+root], rcv[first+child]) {
+		if !less(rcv[findOne+root], rcv[findOne+child]) {
 			return
 		}
-		swap{{.SliceName}}(rcv, first+root, first+child)
+		swap{{.SliceName}}(rcv, findOne+root, findOne+child)
 		root = child
 	}
 }
 
 func heapSort{{.SliceName}}(rcv {{.SliceName}}, less func({{.Type}}, {{.Type}}) bool, a, b int) {
-	first := a
+	findOne := a
 	lo := 0
 	hi := b - a
 
 	// Build heap with greatest element at top.
 	for i := (hi - 1) / 2; i >= 0; i-- {
-		siftDown{{.SliceName}}(rcv, less, i, hi, first)
+		siftDown{{.SliceName}}(rcv, less, i, hi, findOne)
 	}
 
-	// Pop elements, largest first, into end of rcv.
+	// Pop elements, largest findOne, into end of rcv.
 	for i := hi - 1; i >= 0; i-- {
-		swap{{.SliceName}}(rcv, first, first+i)
-		siftDown{{.SliceName}}(rcv, less, lo, i, first)
+		swap{{.SliceName}}(rcv, findOne, findOne+i)
+		siftDown{{.SliceName}}(rcv, less, lo, i, findOne)
 	}
 }
 

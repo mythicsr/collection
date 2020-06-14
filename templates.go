@@ -16,48 +16,58 @@ type model struct {
 var templates = typewriter.TemplateSlice{
 	collection,
 
-	aggregateT, //
-	all,        //
-	any,        //
-	average,
-	averageT,
+	reduceT, //
+	isAll,   //
+	isAny,   //
+	//average,
+	averageT, //num
 	count,
-	distinct,
-	distinctBy,
-	each,
-	first,
+	//distinct,
+	distinctBy, //
+	forEach,
+	findOne,
 	groupByT,
 	keyByT,
-	max,
-	maxT,
+	//max,
+	//maxT,
 	maxBy,
-	min,
-	minT,
+	//min,
+	//minT,
 	minBy,
 	selectT,
 	single,
-	sum,
+	//sum,
 	sumT,
-	where,
+	find,
 
-	sort,
-	isSorted,
-	sortDesc,
-	isSortedDesc,
+	//sort,
+	//isSorted,
+	//sortDesc,
+	//isSortedDesc,
 
 	sortBy,
+	//sortByDesc,
 	isSortedBy,
-	sortByDesc,
-	isSortedByDesc,
+	//isSortedByDesc,
+
+	shuffle,
+	chunk,
+	deepCopy,
+
+	includes,
+	toSlice,
+
+	toInterfaces,
+
+	lpush,
+	lpop,
+	rpush,
+	rpop,
+	removeByIndex,
+	remove,
+
+	paginate,
 
 	sortImplementation,
 	sortInterface,
-
-	shuffle,
-
-	//paginate 分页用
-	//chunk
-	//append
-	//findOne //O(1) map
-	//New  //顺便初始化map
 }
