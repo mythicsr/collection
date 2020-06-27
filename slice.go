@@ -8,5 +8,3 @@ var collection = &typewriter.Template{
 type {{.SliceName}} []{{.Type}}
 `,
 }
-
-//默认加Contain 基础函数

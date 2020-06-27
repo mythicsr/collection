@@ -56,6 +56,8 @@ var templates = typewriter.TemplateSlice{
 
 	includes,
 	toSlice,
+	//toStrings
+	//toMap
 
 	toInterfaces,
 
