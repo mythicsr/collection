@@ -26,6 +26,6 @@ func (rcv {{.SliceName}}) Includes(equalFn func({{.Type}}, {{.Type}}) bool, targ
 			}
 		}
 	}
-	return found == len(_objs)
+	return found == len(_arr)
 }
 `}
