@@ -5,19 +5,21 @@ import "github.com/clipperhouse/typewriter"
 var average = &typewriter.Template{
 	Name: "Average",
 	Text: `
-// Average sums {{.SliceName}} over isAll elements and divides by len({{.SliceName}}). See: http://clipperhouse.github.io/gen/#Average
-func (rcv {{.SliceName}}) Average() ({{.Type}}, error) {
-	var result {{.Type}}
+func (rcv {{.SliceName}}) Average() (result float64, err error) {
+	var results float64
+	length := rcv.Count(func(i {{.Type}}) bool {
+		return true
+	})
 
 	l := len(rcv)
 	if l == 0 {
-		return result, errors.New("cannot determine Average of zero-length {{.SliceName}}")
+		return 0, errors.New("cannot determine Average of zero-length IntSlice")
 	}
 	for _, v := range rcv {
-		result += v
+		results += float64(v)
 	}
-	result = result / {{.Type}}(l)
-	return result, nil
+
+	return results / float64(length), nil
 }
 `,
 	TypeConstraint: typewriter.Constraint{Numeric: true},
@@ -26,7 +28,6 @@ func (rcv {{.SliceName}}) Average() ({{.Type}}, error) {
 var averageT = &typewriter.Template{
 	Name: "Average",
 	Text: `
-// Average{{.TypeParameter.LongName}} sums {{.TypeParameter}} over isAll elements and divides by len({{.SliceName}}). See: http://clipperhouse.github.io/gen/#Average
 func (rcv {{.SliceName}}) Average{{.TypeParameter.LongName}}(fn func({{.Type}}) {{.TypeParameter}}) (result {{.TypeParameter}}, err error) {
 	l := len(rcv)
 	if l == 0 {

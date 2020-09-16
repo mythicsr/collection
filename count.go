@@ -5,10 +5,10 @@ import "github.com/clipperhouse/typewriter"
 var count = &typewriter.Template{
 	Name: "Count",
 	Text: `
-// Count gives the number elements of {{.SliceName}} that return true for the passed func. See: http://clipperhouse.github.io/gen/#Count
-func (rcv {{.SliceName}}) Count(fn func({{.Type}}) bool) (result int) {
+// 满足 matchFn 的元素个数
+func (rcv {{.SliceName}}) Count(matchFn func({{.Type}}) bool) (result int) {
 	for _, v := range rcv {
-		if fn(v) {
+		if matchFn(v) {
 			result++
 		}
 	}

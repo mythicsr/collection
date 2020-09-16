@@ -5,15 +5,10 @@ import "github.com/clipperhouse/typewriter"
 var shuffle = &typewriter.Template{
 	Name: "Shuffle",
 	Text: `
-// Shuffle returns a shuffled copy of {{.SliceName}}, using a version of the Fisher-Yates shuffle. See: http://clipperhouse.github.io/gen/#Shuffle
+// 洗牌，打乱
 func (rcv {{.SliceName}}) Shuffle() {{.SliceName}} {
-    numItems := len(rcv)
-    result := make({{.SliceName}}, numItems)
-    copy(result, rcv)
-    for i := 0; i < numItems; i++ {
-        r := i + rand.Intn(numItems-i)
-        result[r], result[i] = result[i], result[r]
-    }
-    return result
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(rcv), func(i, j int) { rcv[i], rcv[j] = rcv[j], rcv[i] })
+	return rcv
 }
 `}

@@ -19,28 +19,28 @@ var templates = typewriter.TemplateSlice{
 	reduceT, //
 	isAll,   //
 	isAny,   //
-	//average,
+	average,
 	averageT, //num
 	count,
-	//distinct,
+	distinct,
 	distinctBy, //
 	forEach,
 	findOne,
 	groupByT,
 	keyByT,
-	//max,
-	//maxT,
+	max,
+	maxT,
 	maxBy,
-	//min,
-	//minT,
+	min,
+	minT,
 	minBy,
 	selectT,
 	single,
-	//sum,
+	sum,
 	sumT,
 	find,
 
-	//sort,
+	sort,
 	//isSorted,
 	//sortDesc,
 	//isSortedDesc,
@@ -55,9 +55,8 @@ var templates = typewriter.TemplateSlice{
 	deepCopy,
 
 	includes,
-	toSlice,
-	//toStrings
-	//toMap
+	//toSlice,
+	toStrings,
 
 	toInterfaces,
 
@@ -66,7 +65,7 @@ var templates = typewriter.TemplateSlice{
 	rpush,
 	rpop,
 	removeByIndex,
-	remove,
+	removeAll,
 
 	paginate,
 

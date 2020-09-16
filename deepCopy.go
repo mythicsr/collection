@@ -6,6 +6,6 @@ var deepCopy = &typewriter.Template{
 	Name: "DeepCopy",
 	Text: `
 func (rcv {{.SliceName}}) DeepCopy() {{.SliceName}} {
-	return deepcopy.Copy(rcv).(DataSlice)
+	return deepcopy.Copy(rcv).({{.SliceName}})
 }
 `}

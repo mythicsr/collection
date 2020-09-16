@@ -5,7 +5,6 @@ import "github.com/clipperhouse/typewriter"
 var sortBy = &typewriter.Template{
 	Name: "SortBy",
 	Text: `
-// SortBy returns a new ordered {{.SliceName}}, determined by a func defining ‘less’. See: http://clipperhouse.github.io/gen/#SortBy
 func (rcv {{.SliceName}}) SortBy(less func({{.Type}}, {{.Type}}) bool) {{.SliceName}} {
 	result := make({{.SliceName}}, len(rcv))
 	copy(result, rcv)
@@ -24,7 +23,6 @@ func (rcv {{.SliceName}}) SortBy(less func({{.Type}}, {{.Type}}) bool) {{.SliceN
 var isSortedBy = &typewriter.Template{
 	Name: "IsSortedBy",
 	Text: `
-// IsSortedBy reports whether an instance of {{.SliceName}} is sorted, using the pass func to define ‘less’. See: http://clipperhouse.github.io/gen/#SortBy
 func (rcv {{.SliceName}}) IsSortedBy(less func({{.Type}}, {{.Type}}) bool) bool {
 	n := len(rcv)
 	for i := n - 1; i > 0; i-- {

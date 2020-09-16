@@ -5,7 +5,6 @@ import "github.com/clipperhouse/typewriter"
 var min = &typewriter.Template{
 	Name: "Min",
 	Text: `
-	// Min returns the minimum value of {{.SliceName}}. In the case of multiple items being equally minimal, the findOne such element is returned. Returns error if no elements. See: http://clipperhouse.github.io/gen/#Min
 	func (rcv {{.SliceName}}) Min() (result {{.Type}}, err error) {
 		l := len(rcv)
 		if l == 0 {
